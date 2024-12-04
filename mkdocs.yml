@@ -1,0 +1,9 @@
+site_name: 我的第一个站点
+theme: material
+nav:
+  - 首页: index.md
+  - 教程: 
+    - C: Tutorial/C.md
+    - java: Tutorial/java.md
+    - python: Tutorial/Python.md
+  - 关于我: about.md
