@@ -477,22 +477,17 @@
 
 <p>在Arch Linux上安装Hyprland的步骤如下：</p>
 <p>0.安装kitty终端</p>
-<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo pacman -Syu kitty
-````
-1. 安装基础工具：确保你的系统是基于Arch或其派生版，并已安装 base-devel 套件，用于编译软件。
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu<span class="w"> </span>kitty
 </code></pre></div></td></tr></table></div>
-sudo pacman -Syu base-devel
+1. 安装基础工具：确保你的系统是基于Arch或其派生版，并已安装 base-devel 套件，用于编译软件。
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>sudo<span class="w"> </span>pacman<span class="w"> </span>-Syu<span class="w"> </span>base-devel
+</code></pre></div></td></tr></table></div>
+2. 获取Arch-Hyprland自动化安装工具：克隆Arch-Hyprland仓库到本地，并运行安装脚本。
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code>2. 获取Arch-Hyprland自动化安装工具：克隆Arch-Hyprland仓库到本地，并运行安装脚本。
-```
-git clone https://github.com/JaKooLit/Arch-Hyprland.git
-cd Arch-Hyprland
-sh install.sh
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/JaKooLit/Arch-Hyprland.git
+<span class="nb">cd</span><span class="w"> </span>Arch-Hyprland
+sh<span class="w"> </span>install.sh
 </code></pre></div></td></tr></table></div>
 这个自动化工具会帮助你快速安装Hyprland，并提供配置Rofi、Waybar等组件的选项。</p>
 <p>3. 如果不使用自动化脚本，安装Hyprland：
