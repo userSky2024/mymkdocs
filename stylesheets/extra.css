@@ -4,3 +4,17 @@ body {
     background-position: center;
     background-attachment: fixed; /* 使背景图片不随页面滚动 */
 }
+
+.md-content{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.md-sidebar__inner{
+    background-color: rgba(255, 255, 255, 0.8);
+    background-repeat: 10px;
+}
+
+/* 
+.md-header {
+    background-color: #fb7299;
+} */
