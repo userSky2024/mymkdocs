@@ -351,7 +351,7 @@
             
   
   <span class="md-ellipsis">
-    linux
+    关于linux
   </span>
   
 
@@ -361,7 +361,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
-            linux
+            关于linux
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -483,8 +483,20 @@
 查看自己分区
 <code># fdisk -l</code>或<code>lsblk</code>
 分区
-<code># cfdisk [你的硬盘]</code></p>
-<pre><code>进入cfdisk
+<code># cfdisk [你的硬盘]</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code>进入cfdisk
 Delete：删除分区
 New：创建新分区
 Quit:退出
@@ -497,7 +509,7 @@ EFI分区 (100M) FEI Systen
 根分区 Linux filesysten(默认)
 home分区 Linux hone
 交换分区 Linux suap
-</code></pre>
+</code></pre></div></td></tr></table></div></p>
 <p><strong>格式化分区</strong>
 (根分区、home分区)
 <code># mkfs.ext4 /dev/[分区编号]</code>
@@ -516,16 +528,31 @@ home分区 Linux hone
 <code># swapon /dev/[交换空间分区编号]</code></p>
 <p><strong>配置国内镜像源</strong>
 <code># nano /etc/pacman.d/mirrorlist</code>
-添加(清华源)</p>
-<pre><code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch 
-</code></pre>
-<p>刷新
+添加(清华源)
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch 
+</code></pre></div></td></tr></table></div>
+刷新
 <code># pacman -Syy</code>
 导入密钥
 <code># sudo pacman -S archlinux-keyring</code></p>
 <p><strong>安装基本系统</strong>
-<code># pacstrap /mnt [软件包]</code></p>
-<pre><code>软件包列表
+<code># pacstrap /mnt [软件包]</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code>软件包列表
 
 
 base base-devel 基本系统
@@ -541,7 +568,7 @@ efibootmgr (efi启动项管理)
 intel-ucode (英特尔) 或 amd-ucode (amd) cpu编码 根据自己的cpu选择
 bluez bluez-utils (蓝牙)
 nano (文本编辑器)
-</code></pre>
+</code></pre></div></td></tr></table></div></p>
 <p>创建fstab（自动挂载配置文件）
 <code># genfstab -U /mnt &gt;&gt; /mnt/etc/fstab</code></p>
 <p><strong>chroot进入系统</strong>
@@ -552,16 +579,16 @@ nano (文本编辑器)
 <code># hwclock --systohc</code></p>
 <p>本地化
 字符集
-<code># nano /etc/locale.gen</code></p>
-<pre><code>删除en_US.UTF-8 UTF-8和zh_CN.UTF-8 UTF-8前的“#”
-</code></pre>
-<p>生成locale
+<code># nano /etc/locale.gen</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>删除en_US.UTF-8 UTF-8和zh_CN.UTF-8 UTF-8前的“#”
+</code></pre></div></td></tr></table></div>
+生成locale
 <code># locale-gen</code>
 语言环境
-<code># nano /etc/locale.conf</code></p>
-<pre><code>添加 LANG=en_US.UTF-8
-</code></pre>
-<p>设置主机名
+<code># nano /etc/locale.conf</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>添加 LANG=en_US.UTF-8
+</code></pre></div></td></tr></table></div>
+设置主机名
 <code># nano /etc/hostname</code> (主机名输入到文件里)
 设置root密码
 <code># passwd</code>
@@ -570,17 +597,17 @@ nano (文本编辑器)
 为用户创建密码
 <code># passwd [用户名]</code>
 编辑sudoers赋予用户root权限
-<code># nano /etc/sudoers</code></p>
-<pre><code>[删除%wheel ALL=(ALL:ALL) ALL前的“#”]
-</code></pre>
+<code># nano /etc/sudoers</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>[删除%wheel ALL=(ALL:ALL) ALL前的“#”]
+</code></pre></div></td></tr></table></div></p>
 <p>启用服务
 <code># systemctl enable NetworkManager</code>(网络)
 <code># systemctl enable bluetooth</code> (蓝牙)
 编辑grub
-<code># nano /etc/default/grub</code></p>
-<pre><code>（去掉GRUB_DISABLE_OS_PROBER=false前的&quot;#&quot;)
-</code></pre>
-<p>安装grub服务
+<code># nano /etc/default/grub</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code>（去掉GRUB_DISABLE_OS_PROBER=false前的&quot;#&quot;)
+</code></pre></div></td></tr></table></div>
+安装grub服务
 <code># grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=grub</code>
 如果报efibootmgr未找到 使用命令
 <code>pacman -S efibootmgr</code></p>
@@ -591,12 +618,15 @@ nano (文本编辑器)
 开机自启显示管理
 <code># systemctl enable sddm</code></p>
 <p>安装工具
-<code># pacman -S [软件包]</code></p>
-<pre><code>konsole (终端)
+<code># pacman -S [软件包]</code>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code>konsole (终端)
 dolphin (文件管理器)
 ark (解压缩软件)
 kate (文本编辑器)
-</code></pre>
+</code></pre></div></td></tr></table></div></p>
 <p>退出系统
 <code># exit</code>
 重启
@@ -610,17 +640,23 @@ kate (文本编辑器)
 在设置里设置一下语言,然后重启</p>
 <p>配置国内源
 <code>sudo nano /etc/pacman.conf</code></p>
-<pre><code>开启32为库
-去掉[multilib]及下一行前的 '#'
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code>开启32为库
+去掉[multilib]及下一行前的 &#39;#&#39;
 
 然后下面添加
 [archlinuxcn]
 Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch (清华源)
  或 Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch (中科大源)
  或 Server = https://repo.huaweicloud.com/archlinux/$repo/os/$arch (华为源)
-
-</code></pre>
-<p>刷新软件包
+</code></pre></div></td></tr></table></div>
+刷新软件包
 <code># sudo pacman -Syy</code>
 导入密钥
 <code># sudo pacman -S archlinuxcn-keyring</code></p>
@@ -628,12 +664,14 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch (清华源)
 <code># sudo pacman -S archlinux-appstream-data packagekit-qt5 fwupd</code></p>
 <p>安装aur助手yay
 <code># sudo pacman -S yay</code></p>
-<p>安装中文输入法</p>
-<pre><code># sudo pacman -S fcitx5-im
+<p>安装中文输入法
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code># sudo pacman -S fcitx5-im
 # sudo pacman -S fcitx5-chinese-addons fcitx5-rime
 # yay -S fcitx5-input-support
-</code></pre>
-<p>重启</p>
+</code></pre></div></td></tr></table></div>
+重启</p>
 
 
 
